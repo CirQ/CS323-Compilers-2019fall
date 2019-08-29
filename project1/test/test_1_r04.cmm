@@ -1,0 +1,6 @@
+int test_1_r04(int p)
+{
+  int a, bb
+  if(a > 4)
+    return @;
+}

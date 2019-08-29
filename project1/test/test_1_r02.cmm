@@ -1,0 +1,5 @@
+int test_1_r02()
+{
+  int i = 0, j = 1;
+  float i = $;
+}

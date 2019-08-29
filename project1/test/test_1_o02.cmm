@@ -1,0 +1,9 @@
+int test_1_o02()
+{
+  int dec_int = 323;
+  int hex_int = 0xFFF;
+  return hex_int - dec_int;
+
+  unsigned char ch = '\xC0';
+  printf("%x\n");
+}

@@ -17,16 +17,24 @@ void linked_list_free(node *head){
     }
 }
 
-void linked_list_display(node *head){
+char linked_list_string[0x10000];
+
+char *linked_list_tostring(node *head){
     node *cur = head->next;
+    char *position;
+    int length = 0;
     while(cur != NULL){
-        printf("%d", cur->value);
+        position = linked_list_string + length;
+        length += sprintf(position, "%d", cur->value);
         cur = cur->next;
         if(cur != NULL){
-            printf("->");
+            position = linked_list_string + length;
+            length += sprintf(position, "->");
         }
     }
-    puts("");
+    position = linked_list_string + length;
+    length += sprintf(position, "%c", '\0');
+    return linked_list_string;
 }
 
 int linked_list_size(node *head){

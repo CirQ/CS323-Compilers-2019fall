@@ -16,7 +16,7 @@ node *linked_list_init();
 void linked_list_free(node *head);
 
 /* display elements in the linked list */
-void linked_list_display(node *head);
+char *linked_list_tostring(node *head);
 
 /* get the length of the linked list */
 int linked_list_size(node *head);

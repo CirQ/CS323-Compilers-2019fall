@@ -1,0 +1,4 @@
+*.out
+*.swp
+peda-session-*
+.gdb_history

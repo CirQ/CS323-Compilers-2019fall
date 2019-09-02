@@ -1,4 +1,5 @@
 *.out
 *.swp
+*.so
 peda-session-*
 .gdb_history

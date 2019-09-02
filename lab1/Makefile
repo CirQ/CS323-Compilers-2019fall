@@ -6,7 +6,7 @@ hello:
 main:
 	$(CC) linked_list.c main.c -o ll_menu
 libll:
-	$(CC) linked_list.c --shared -o libll.so
+	$(CC) linked_list.c --shared -fPIC -o libll.so
 clean:
 	@rm -f a.out hello ll_menu
 .PHONY: hello

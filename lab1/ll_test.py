@@ -146,7 +146,7 @@ class LinkedListTest(unittest.TestCase):
         ret = ll.search_all(7)
         self.assertEqual(str(ret), '7->12')
         ret = ll.search_all(101)
-        self.assertEqual(ret.size, 0)
+        self.assertEqual(ret.size(), 0)
 
 
 

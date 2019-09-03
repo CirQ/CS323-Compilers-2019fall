@@ -129,9 +129,9 @@ class LinkedListTest(unittest.TestCase):
     def test_search(self):
         ll = LinkedList()
         for i in range(10):
-            ll.append(10)
+            ll.append(i)
         for i in range(10):
-            ll.append(10)
+            ll.append(i)
         for i in range(10):
             idx = ll.search(i)
             self.assertTrue(idx == i)

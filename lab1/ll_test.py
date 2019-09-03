@@ -44,10 +44,10 @@ class LinkedList:
         self.lib.linked_list_remove_all(self.head, val)
 
     def get(self, index):
-        self.lib.linked_list_get(self.head, index)
+        return self.lib.linked_list_get(self.head, index)
 
     def search(self, val):
-        self.lib.linked_list_search(self.head, val)
+        return self.lib.linked_list_search(self.head, val)
 
     def search_all(self, val):
         ptr = self.lib.linked_list_search_all(self.head, val)

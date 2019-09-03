@@ -11,23 +11,25 @@
 %option noyywrap
 letter [a-zA-Z]
 %%
-{letter}+ { words++; chars+=yyleng; }
+{letter}+ { words++; chars+=strlen(yytext); }
 \n { chars++; lines++; }
-<<EOF>> { lines++; return 0; }
+<<EOF>> { if(yyleng > 1){ lines++; } return 0; }
 . { chars++; }
 %%
 int main(int argc, char **argv){
+    char *file_path;
     if(argc < 2){
         fprintf(stderr, "Usage: %s <file_path>\n", argv[0]);
         return EXIT_FAIL;
     }
     else if(argc == 2){
-        if(!(yyin = fopen(argv[1], "r"))){
+        file_path = argv[1];
+        if(!(yyin = fopen(file_path, "r"))){
             perror(argv[1]);
             return EXIT_FAIL;
         }
         yylex();
-        printf("%8d%8d%8d\n", lines, words, chars);
+        printf("%-8d%-8d%-8d%s\n", lines, words, chars, file_path);
         return EXIT_OK;
     }
     else{

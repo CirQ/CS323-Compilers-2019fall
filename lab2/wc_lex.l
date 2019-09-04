@@ -8,7 +8,6 @@
     int words = 0;
     int lines = 0;
 %}
-%option noyywrap
 letter [a-zA-Z]
 %%
 {letter}+ { words++; chars+=strlen(yytext); }

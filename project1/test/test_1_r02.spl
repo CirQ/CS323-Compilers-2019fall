@@ -1,5 +1,13 @@
+int global;
+global = 1;
+struct my_struct
+{
+  int code;
+  char data;
+};
 int test_1_r02()
 {
-  int i = 0, j = 1;
-  float i = $;
+  struct my_struct obj;
+  obj.code = global;
+  global = global + 1;
 }

@@ -1,6 +1,6 @@
-int test_1_r03(
+int test_1_r03()
 {
-    int nothing;
-    int array[10];
-    array[10.5] = 1;
+	int i = 0, j = 1;
+  float i = $;
+  return @;
 }

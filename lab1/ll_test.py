@@ -12,6 +12,7 @@ class LinkedList(ctypes.Structure):
     def __init__(self, head=0):
         self.lib.linked_list_tostring.restype = ctypes.c_char_p
         self.lib.linked_list_init.restype = ctypes.POINTER(LinkedList)
+        self.lib.linked_list_search_all.restype = ctypes.POINTER(LinkedList)
         if head == 0:
             self.head = self.lib.linked_list_init()
         else:

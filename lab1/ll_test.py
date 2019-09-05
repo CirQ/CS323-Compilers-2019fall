@@ -5,13 +5,13 @@ import ctypes
 import os
 import unittest
 
-class LinkedList:
+class LinkedList(ctypes.Structure):
     cwd = os.getcwd()
     lib_path = os.path.join(cwd, 'libll.so')
     lib = ctypes.CDLL(lib_path)
-
     def __init__(self, head=0):
         self.lib.linked_list_tostring.restype = ctypes.c_char_p
+        self.lib.linked_list_init.restype = ctypes.POINTER(LinkedList)
         if head == 0:
             self.head = self.lib.linked_list_init()
         else:

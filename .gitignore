@@ -1,6 +1,7 @@
 *.out
 *.swp
 *.so
+*.bak
 peda-session-*
 .gdb_history
 lex.yy.c

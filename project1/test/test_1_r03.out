@@ -1,0 +1,3 @@
+Error type A at Line 4: Mysterious lexeme $
+Error type B at Line 7: Missing semicolon ';'
+Error type A at Line 8: Mysterious lexeme @

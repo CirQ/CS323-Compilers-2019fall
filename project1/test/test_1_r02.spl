@@ -1,5 +1,4 @@
 int global;
-global = 1;
 struct my_struct
 {
   int code;

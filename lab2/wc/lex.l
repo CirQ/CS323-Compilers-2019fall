@@ -12,7 +12,6 @@ letter [a-zA-Z]
 %%
 {letter}+ { words++; chars+=strlen(yytext); }
 \n { chars++; lines++; }
-<<EOF>> { if(yyleng > 1){ lines++; } return 0; }
 . { chars++; }
 %%
 int main(int argc, char **argv){

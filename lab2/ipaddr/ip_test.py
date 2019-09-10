@@ -24,6 +24,9 @@ for input_, output in test_cases.items():
     ans = valid_ip_address(input_)
     if ans != output:
         print('Wrong!')
+        print('Input: %s' % input_)
+        print('Excepted: %s' % output)
+        print('Your answer: %s' % ans)
         break
 else:
     print('All tests passed!')

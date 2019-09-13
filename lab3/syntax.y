@@ -7,7 +7,7 @@
 %token INT
 %token ADD SUB MUL DIV PERC EQ
 %%
-Quiz: Exp EQ { result = $1; YYACCEPT; }
+Quiz: Exp EQ { result = $1; }
     ;
 Exp: Factor
     | Factor ADD Exp { $$ = $1 + $3; }
@@ -33,10 +33,7 @@ int evaluate(char *expr){
 #ifndef CALC_MAIN
 #else
 int main(){
-    //yydebug = 1;
-    while(1){
-        yyparse();
-        printf(" = %d\n", result);
-    }
+    yyparse();
+    printf(" = %d\n", result);
 }
 #endif

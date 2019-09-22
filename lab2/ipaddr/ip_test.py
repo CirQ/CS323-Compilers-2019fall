@@ -21,7 +21,7 @@ def valid_ip_address(ip):
 test_cases = pickle.load(open('data.pickle', 'rb'))
 
 for input_, output in test_cases.items():
-    ans = valid_ip_address(input_)
+    ans = valid_ip_address(input_+'\n')
     if ans != output:
         print('Wrong!')
         print('Input: %s' % input_)
@@ -30,4 +30,3 @@ for input_, output in test_cases.items():
         break
 else:
     print('All tests passed!')
-

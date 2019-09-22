@@ -20,6 +20,7 @@ v6 "ADD ANY SUB-PATTERNS AS YOU WANT"
     indicator = 0;
     return 0;
 }
+\n {}
 . {}
 %%
 char *validIPAddress(char *IP){

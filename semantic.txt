@@ -1,0 +1,37 @@
+/*
+ * Assumptions means the test cases will not bring these violation
+ * But assumption 7&8 will be revoked for optional rules
+ *
+ * two options:
+ * 1. adopt scope checking (no assumption 7)
+ * 2. structural equivalence for struct type (no assumption 8)
+ */
+
+Assumptions:
+
+1. no assignment/operation between int and float variables
+2. no unary/binary operation with char variables (they only occur as function parameters and arguments)
+3. only int variables can do boolean operations, and branching/ looping conditions
+4. only int and float variables can do arithmetic operations
+5. no nested function definitions
+6. field names in struct are unique (in any scope), so the names of struct fields, and variables never overlapped
+7. (relaxed) there are only global scope, i.e., all variable names are unique
+8. (relaxed) we adopt name equivalence to determine whether two struct types are equivalent
+
+Error types:
+
+1. variable is used without definition
+2. function is invoked without definition
+3. variable is redefined in the same scope
+4. function is redefined (in the global scope, since we don't have nested function)
+5. unmatching types on both sides of assignment operator (=)
+6. rvalue on the left side of assignment operator
+7. unmatching operands, such as adding an integer to a structure variable
+8. the function's return value type mismatches the declared type
+9. the function's arguments mismatch the declared parameters (either types or numbers, or both)
+10. applying indexing operator ([...]) on non-array type variables
+11. applying function invocation operator (foo(...)) on non-function names
+12. array indexing with non-integer type expression
+13. accessing member of non-structure variable (i.e., misuse the dot operator)
+14. accessing an undefined structure member
+15. redefine the same structure type

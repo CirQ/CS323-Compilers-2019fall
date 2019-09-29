@@ -38,7 +38,7 @@ Program (1)
               Exp (4)
                 Exp (4)
                   ID: a
-                GT: >
+                GT
                 Exp (4)
                   ID: b
               RP

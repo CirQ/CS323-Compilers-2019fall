@@ -3,7 +3,7 @@
     extern FILE *yyin;
     void yyerror(const char*);
 
-    // what if
+    // what if (assume no syntax error)
     // Quiz QuizList { printf(" = %.2f\n", $1); }
 %}
 %error-verbose
@@ -12,9 +12,9 @@
 %left ADD SUB
 %left MUL DIV
 %%
-QuizList:
-      QuizList Quiz { printf(" = %.2f\n", $2); }
-    | %empty
+QuizList: %empty
+    | QuizList Quiz { printf(" = %.2f\n", $2); }
+    | QuizList ErrExp EQ {}
     ;
 Quiz: Exp EQ { $$ = $1; }
     ;
@@ -25,6 +25,12 @@ Exp: INT
     | Exp DIV Exp { $$ = $1 / $3; }
     | Exp ADD Disc { $$ = $1 * (1 + $3); }
     | Exp SUB Disc { $$ = $1 * (1 - $3); }
+    ;
+ErrExp:
+      Exp ADD error
+    | Exp SUB error
+    | Exp MUL error
+    | Exp DIV error
     ;
 Disc: INT PERC { $$ = 0.01 * $1; }
     ;

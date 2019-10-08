@@ -1,0 +1,20 @@
+/*
+multiline
+\/\///\\/
+comment
+**/
+int /*func*/test_1_o03(int m,//)
+int n)
+{
+  int max;
+  if (m > /*inline comment*/n)
+  {
+    max = m;
+    // max = 2*m + 1;
+  }
+  else
+  {
+    max = n;
+  }
+  return max;
+}

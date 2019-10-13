@@ -71,7 +71,7 @@ Exp -> Exp ASSIGN Exp
     | NOT Exp
     | ID LP Args RP
     | ID LP RP
-    | Exp LB Exp LB
+    | Exp LB Exp RB
     | Exp DOT ID
     | ID
     | INT

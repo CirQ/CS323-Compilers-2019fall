@@ -15,7 +15,7 @@ Assumptions:
 4. only int and float variables can do arithmetic operations
 5. no nested function definitions
 6. field names in struct are unique (in any scope), so the names of struct fields, and variables never overlapped
-7. (relaxed) there are only global scope, i.e., all variable names are unique
+7. (relaxed) there is only global scope, i.e., all variable names are unique
 8. (relaxed) we adopt name equivalence to determine whether two struct types are equivalent
 
 Error types:

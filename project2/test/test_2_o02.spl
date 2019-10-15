@@ -1,0 +1,17 @@
+struct Student
+{
+  int age;
+  float height;
+};
+struct Person
+{
+  int code;
+  float weight;
+};
+int test_2_o02()
+{
+  struct Student s;
+  struct Person p;
+  s = p;
+  return 0;
+}

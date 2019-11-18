@@ -1,0 +1,12 @@
+int foo(int i, int j, int k){
+    return i - j + k*2;
+}
+
+int main(){
+    int a = 110;
+    int b = 97;
+    int c = 3;
+    c = foo(a,b,c);
+    write(c);
+    return 0;
+}
